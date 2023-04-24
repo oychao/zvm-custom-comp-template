@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
-    "outDir": "bin",
+    "outDir": "dist",
     "sourceMap": true,
     "module": "esnext",
     "lib": ["es7", "dom"],
@@ -14,6 +14,7 @@
       // "@utils/*": ["utils/*"]
     },
     "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
     "noImplicitReturns": true,
     "noImplicitThis": false,
     "importHelpers": true,
@@ -30,6 +31,6 @@
       }
     ]
   },
-  "exclude": ["node_modules", "bin", "demo"],
+  "exclude": ["node_modules", "dist", "demo"],
   "typeRoots": ["node", "node_modules/@types", "./typings"]
 }

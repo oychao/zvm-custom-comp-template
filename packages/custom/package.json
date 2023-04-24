@@ -1,8 +1,8 @@
 {
   "name": "@functorz/drawer",
   "version": "1.0.0",
-  "main": "./bin/index.js",
-  "typings": "./bin/index.d.ts",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "type": "module",
   "author": {
     "name": "your name",
@@ -15,7 +15,7 @@
   "files": [
     "LICENSE.md",
     "README.md",
-    "bin/"
+    "dist/"
   ],
   "watch": {
     "build": {
@@ -26,9 +26,9 @@
     }
   },
   "scripts": {
-    "build": "",
-    "build:tsc": "rm -rf bin && tsc",
-    "rollup": "rm -rf bin && rollup -c",
+    "build": "npm run rollup",
+    "build:tsc": "rm -rf dist && tsc",
+    "rollup": "rm -rf dist && rollup -c",
     "test": "mocha --require babel-register --require babel-polyfill test/**/*.spec.js",
     "prepare": "npm run build",
     "watch": "npm-watch build"
