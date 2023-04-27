@@ -12,7 +12,15 @@ export default defineConfig({
       exposes: {
         './main': './src/components',
       },
-      shared: ['react', 'react-dom'],
+      shared: [
+        'classnames',
+        'immer',
+        'lodash',
+        'moment',
+        'react',
+        'react-dom',
+        'react-router-dom',
+      ],
     }),
   ],
   build: {

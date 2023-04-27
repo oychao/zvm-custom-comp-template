@@ -1,7 +1,8 @@
 import { MenuOutlined } from '@ant-design/icons';
 import { Button, Drawer, List } from 'antd';
 import { useState } from 'react';
-import './HeaderMenu.css';
+import styles from './HeaderMenu.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 export const HeaderMenu = () => {
   const [open, setOpen] = useState(false);
@@ -14,8 +15,31 @@ export const HeaderMenu = () => {
     setOpen(false);
   };
 
+  const navigate = useNavigate();
+
+  const dataSource = [
+    {
+      title: 'Blog',
+      onClick() {
+        navigate('/blog');
+      },
+    },
+    {
+      title: 'Pricing',
+      onClick() {
+        window.open('https://pricing.momen.app/');
+      },
+    },
+    {
+      title: 'Features on Website',
+      onClick() {
+        navigate('/feature');
+      },
+    },
+  ];
+
   return (
-    <div className='headerMenuContainer'>
+    <div className={styles.headerMenuContainer}>
       <Button icon={<MenuOutlined />} size='middle' onClick={showDrawer} />
       <Drawer
         placement='right'
@@ -27,10 +51,12 @@ export const HeaderMenu = () => {
       >
         <List
           style={{ padding: '0px 20px' }}
-          dataSource={['Blog', 'Pricing', 'Features on Website']}
-          renderItem={item => (
+          dataSource={dataSource}
+          renderItem={({ title, onClick }) => (
             <List.Item>
-              <Button type='link'>{item}</Button>
+              <Button type='link' onClick={onClick}>
+                {title}
+              </Button>
             </List.Item>
           )}
         />
