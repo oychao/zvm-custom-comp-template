@@ -1,8 +1,8 @@
 import { MenuOutlined } from '@ant-design/icons';
 import { Button, Drawer, List } from 'antd';
 import { useState } from 'react';
-import styles from './HeaderMenu.module.scss';
 import { useNavigate } from 'react-router-dom';
+import styles from './HeaderMenu.module.scss';
 
 export const HeaderMenu = () => {
   const [open, setOpen] = useState(false);
@@ -19,9 +19,9 @@ export const HeaderMenu = () => {
 
   const dataSource = [
     {
-      title: 'Blog',
+      title: 'Product',
       onClick() {
-        navigate('/blog');
+        navigate('/product');
       },
     },
     {
@@ -31,9 +31,9 @@ export const HeaderMenu = () => {
       },
     },
     {
-      title: 'Features on Website',
+      title: 'Blog',
       onClick() {
-        navigate('/feature');
+        navigate('/blog');
       },
     },
   ];

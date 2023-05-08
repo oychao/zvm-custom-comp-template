@@ -14,7 +14,6 @@ export default defineConfig({
       },
       shared: [
         'classnames',
-        'immer',
         'lodash',
         'moment',
         'react',
