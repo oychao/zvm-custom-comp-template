@@ -32,7 +32,7 @@ export const HeaderMenu = ({ globalData }: HeaderMenuProps) => {
           if (item.internal) {
             navigate(item.url);
           } else {
-            window.open('https://pricing.momen.app/');
+            window.open(item.url);
           }
         },
       };
