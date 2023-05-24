@@ -1,10 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { MenuOutlined } from '@ant-design/icons';
 import { Button, Drawer, List } from 'antd';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './HeaderMenu.module.scss';
 
-export const HeaderMenu = () => {
+interface HeaderMenuProps {
+  globalData: Record<string, any>;
+}
+
+export const HeaderMenu = ({ globalData }: HeaderMenuProps) => {
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -17,26 +22,21 @@ export const HeaderMenu = () => {
 
   const navigate = useNavigate();
 
-  const dataSource = [
-    {
-      title: 'Product',
-      onClick() {
-        navigate('/product');
-      },
-    },
-    {
-      title: 'Pricing',
-      onClick() {
-        window.open('https://pricing.momen.app/');
-      },
-    },
-    {
-      title: 'Blog',
-      onClick() {
-        navigate('/blog');
-      },
-    },
-  ];
+  const globalNavigationConfig = JSON.parse(globalData.mobile_navigator);
+
+  const dataSource: Array<{ title: string; onClick: () => void }> =
+    globalNavigationConfig.map((item: any) => {
+      return {
+        title: item.title,
+        onClick() {
+          if (item.internal) {
+            navigate(item.url);
+          } else {
+            window.open('https://pricing.momen.app/');
+          }
+        },
+      };
+    });
 
   return (
     <div className={styles.headerMenuContainer}>
