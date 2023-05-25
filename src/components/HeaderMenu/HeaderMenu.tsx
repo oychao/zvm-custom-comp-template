@@ -22,7 +22,9 @@ export const HeaderMenu = ({ globalData }: HeaderMenuProps) => {
 
   const navigate = useNavigate();
 
-  const globalNavigationConfig = JSON.parse(globalData.mobile_navigator);
+  const globalNavigationConfig = globalData?.mobile_navigator
+    ? JSON.parse(globalData?.mobile_navigator)
+    : {};
 
   const dataSource: Array<{ title: string; onClick: () => void }> =
     globalNavigationConfig.map((item: any) => {
