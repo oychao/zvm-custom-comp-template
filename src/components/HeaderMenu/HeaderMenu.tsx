@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { MenuOutlined } from '@ant-design/icons';
 import { Button, Drawer, List } from 'antd';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './HeaderMenu.module.scss';
 
@@ -39,6 +39,10 @@ export const HeaderMenu = ({ globalData }: HeaderMenuProps) => {
         },
       };
     });
+
+  useEffect(() => {
+    console.info('Header Menu loaded');
+  }, []);
 
   return (
     <div className={styles.headerMenuContainer}>
