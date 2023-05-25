@@ -24,7 +24,7 @@ export const HeaderMenu = ({ globalData }: HeaderMenuProps) => {
 
   const globalNavigationConfig = globalData?.mobile_navigator
     ? JSON.parse(globalData?.mobile_navigator)
-    : {};
+    : [];
 
   const dataSource: Array<{ title: string; onClick: () => void }> =
     globalNavigationConfig.map((item: any) => {
