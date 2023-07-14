@@ -1,0 +1,10 @@
+{
+  "customComponentItems": {
+    "HeaderMenu-5ef64ab5": {
+      "name": "HeaderMenu",
+      "imagePath": "preview/HeaderMenu.png",
+      "description": "test description, test description, test description"
+    }
+  },
+  "version": "0.10.0"
+}
