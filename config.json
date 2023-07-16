@@ -4,7 +4,12 @@
       "name": "HeaderMenu",
       "imagePath": "preview/HeaderMenu.jpg",
       "description": "test description, test description, test description"
+    },
+    "HeaderMenu2": {
+      "name": "HeaderMenu2",
+      "imagePath": "preview/HeaderMenu2.jpg",
+      "description": "test description, test description, test description"
     }
   },
-  "version": "0.10.4"
+  "version": "0.10.5"
 }
