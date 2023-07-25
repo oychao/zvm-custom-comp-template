@@ -1,10 +1,10 @@
 {
   "customComponentItems": {
-    "HeaderMenu": {
-      "name": "HeaderMenu",
-      "imagePath": "preview/HeaderMenu.jpg",
+    "Count": {
+      "name": "Count",
+      "imagePath": "preview/count.jpeg",
       "description": "test description, test description, test description"
     }
   },
-  "version": "0.10.8"
+  "version": "1.0.0"
 }
